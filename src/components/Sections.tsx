@@ -196,7 +196,12 @@ export function ChatSection() {
 
   const scrollBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
 
-  useEffect(() => { scrollBottom() }, [messages])
+  useEffect(() => {
+    // Only scroll if there's more than the initial greeting message
+    if (messages.length > 1) {
+      scrollBottom()
+    }
+  }, [messages])
 
   const send = (q: string) => {
     if (!q.trim()) return
