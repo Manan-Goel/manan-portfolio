@@ -7,6 +7,7 @@
 ## 🚀 Quick Start
 
 ```bash
+
 # 1. Install dependencies
 npm install
 
